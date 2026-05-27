@@ -37,7 +37,7 @@
           DataStream
         </span>
         <a
-          href="mailto:contact@wikolabs.com"
+          href="https://calendly.com/wikolabs" target="_blank" rel="noopener noreferrer"
           style={{
             border: "1.5px solid #134e4a",
             color: "#134e4a",
@@ -103,7 +103,7 @@
           // Sans coder. Sans recruter. Sans payer une équipe data.
         </p>
         <a
-          href="mailto:contact@wikolabs.com"
+          href="https://calendly.com/wikolabs" target="_blank" rel="noopener noreferrer"
           style={{
             backgroundColor: "#134e4a",
             color: "#f0fdfa",
@@ -301,7 +301,7 @@
           // setup &lt; 30min. no DevOps required. free tier available.
         </p>
         <a
-          href="mailto:contact@wikolabs.com"
+          href="https://calendly.com/wikolabs" target="_blank" rel="noopener noreferrer"
           style={{
             backgroundColor: "#f0fdfa",
             color: "#134e4a",
