@@ -102,21 +102,42 @@
           // ingestion → transformation → validation → livraison<br />
           // Sans coder. Sans recruter. Sans payer une équipe data.
         </p>
-        <a
-          href="https://calendly.com/wikolabs" target="_blank" rel="noopener noreferrer"
-          style={{
-            backgroundColor: "#134e4a",
-            color: "#f0fdfa",
-            padding: "0.85rem 2rem",
-            textDecoration: "none",
-            fontSize: "0.85rem",
-            fontWeight: 700,
-            letterSpacing: "0.08em",
-            textTransform: "uppercase",
-          }}
-        >
-          npm install datastream-cli
-        </a>
+        <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+          <a
+            href="https://calendly.com/wikolabs"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              backgroundColor: "#134e4a",
+              color: "#f0fdfa",
+              padding: "0.85rem 2rem",
+              textDecoration: "none",
+              fontSize: "0.85rem",
+              fontWeight: 700,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+            }}
+          >
+            📅 Réserver un créneau →
+          </a>
+          <a
+            href="https://wa.me/261386626100?text=Bonjour%2C%20je%20souhaite%20discuter%20de%20DataStream%20avec%20Wikolabs."
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              backgroundColor: "#25d366",
+              color: "#fff",
+              padding: "0.85rem 2rem",
+              textDecoration: "none",
+              fontSize: "0.85rem",
+              fontWeight: 700,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+            }}
+          >
+            💬 WhatsApp →
+          </a>
+        </div>
       </section>
 
       {/* Pipeline diagram */}
@@ -300,22 +321,44 @@
         <p style={{ fontSize: "0.85rem", color: "#99f6e4", marginBottom: "2rem", fontFamily: "var(--font-body)" }}>
           // setup &lt; 30min. no DevOps required. free tier available.
         </p>
-        <a
-          href="https://calendly.com/wikolabs" target="_blank" rel="noopener noreferrer"
-          style={{
-            backgroundColor: "#f0fdfa",
-            color: "#134e4a",
-            padding: "0.85rem 2.5rem",
-            textDecoration: "none",
-            fontWeight: 700,
-            fontSize: "0.85rem",
-            letterSpacing: "0.08em",
-            textTransform: "uppercase",
-            fontFamily: "var(--font-body)",
-          }}
-        >
-          Contacter l'équipe
-        </a>
+        <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
+          <a
+            href="https://calendly.com/wikolabs"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              backgroundColor: "#f0fdfa",
+              color: "#134e4a",
+              padding: "0.85rem 2.5rem",
+              textDecoration: "none",
+              fontWeight: 700,
+              fontSize: "0.85rem",
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              fontFamily: "var(--font-body)",
+            }}
+          >
+            📅 Réserver un créneau →
+          </a>
+          <a
+            href="https://wa.me/261386626100?text=Bonjour%2C%20je%20souhaite%20discuter%20de%20DataStream%20avec%20Wikolabs."
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              backgroundColor: "#25d366",
+              color: "#fff",
+              padding: "0.85rem 2.5rem",
+              textDecoration: "none",
+              fontWeight: 700,
+              fontSize: "0.85rem",
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              fontFamily: "var(--font-body)",
+            }}
+          >
+            💬 WhatsApp →
+          </a>
+        </div>
       </section>
 
       {/* Footer */}
