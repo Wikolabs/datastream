@@ -36,9 +36,8 @@
         >
           DataStream
         </span>
-        <a
-          href="https://calendly.com/wikolabs" target="_blank" rel="noopener noreferrer"
-          style={{
+        <button data-cal-link="wikolabs-team/30min" data-cal-namespace="wk30min" data-cal-config='{"layout":"month_view"}' type="button"
+            style={{
             border: "1.5px solid #134e4a",
             color: "#134e4a",
             padding: "0.5rem 1.25rem",
@@ -47,10 +46,9 @@
             fontWeight: 700,
             letterSpacing: "0.08em",
             textTransform: "uppercase",
-          }}
-        >
+          }}>
           $ ./request-demo
-        </a>
+        </button>
       </nav>
 
       {/* Hero */}
@@ -103,10 +101,7 @@
           // Sans coder. Sans recruter. Sans payer une équipe data.
         </p>
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-          <a
-            href="https://calendly.com/wikolabs"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button data-cal-link="wikolabs-team/30min" data-cal-namespace="wk30min" data-cal-config='{"layout":"month_view"}' type="button"
             style={{
               backgroundColor: "#134e4a",
               color: "#f0fdfa",
@@ -116,10 +111,9 @@
               fontWeight: 700,
               letterSpacing: "0.08em",
               textTransform: "uppercase",
-            }}
-          >
+            }}>
             📅 Réserver un créneau →
-          </a>
+          </button>
           <a
             href="https://wa.me/261386626100?text=Bonjour%2C%20je%20souhaite%20discuter%20de%20DataStream%20avec%20Wikolabs."
             target="_blank"
@@ -322,10 +316,7 @@
           // setup &lt; 30min. no DevOps required. free tier available.
         </p>
         <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
-          <a
-            href="https://calendly.com/wikolabs"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button data-cal-link="wikolabs-team/30min" data-cal-namespace="wk30min" data-cal-config='{"layout":"month_view"}' type="button"
             style={{
               backgroundColor: "#f0fdfa",
               color: "#134e4a",
@@ -336,10 +327,9 @@
               letterSpacing: "0.08em",
               textTransform: "uppercase",
               fontFamily: "var(--font-body)",
-            }}
-          >
+            }}>
             📅 Réserver un créneau →
-          </a>
+          </button>
           <a
             href="https://wa.me/261386626100?text=Bonjour%2C%20je%20souhaite%20discuter%20de%20DataStream%20avec%20Wikolabs."
             target="_blank"
