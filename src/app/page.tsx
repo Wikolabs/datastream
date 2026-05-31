@@ -1,376 +1,231 @@
-﻿export default function Page() {
-  const steps = [
-    { label: "SOURCE", desc: "40+ connecteurs", color: "#134e4a" },
-    { label: "EXTRACT", desc: "Ingestion auto", color: "#0f766e" },
-    { label: "TRANSFORM", desc: "Règles SQL/Python", color: "#0d9488" },
-    { label: "VALIDATE", desc: "Qualité enforced", color: "#14b8a6" },
-    { label: "LOAD", desc: "DWH / Data lake", color: "#2dd4bf" },
-    { label: "DASHBOARD", desc: "Métriques live", color: "#5eead4" },
-  ];
+﻿"use client";
+
+const P = {
+  name: "DataStream",
+  tagLabel: "Pipeline IA · Temps reel · Zero DevOps",
+  taglines: ["Vos donnees, propres.", "Livrees en temps reel.", "Sans equipe data."],
+  taglineAccentIdx: 1,
+  desc: "DataStream orchestre votre pipeline de donnees de bout en bout — ingestion, transformation, validation et livraison vers votre entrepot — automatiquement, sans coder ni recruter.",
+  accent: "#22D3EE",
+  accentDim: "rgba(34,211,238,0.1)",
+  accentBorder: "rgba(34,211,238,0.25)",
+  accentGlow: "rgba(34,211,238,0.12)",
+  waText: "DataStream",
+  navLinks: [
+    { label: "Fonctionnalites", href: "#features" },
+    { label: "Comment ca marche", href: "#process" },
+    { label: "Contact", href: "#cta" },
+  ],
+  metrics: [
+    { value: "40+", label: "connecteurs natifs" },
+    { value: "99.97%", label: "uptime garanti" },
+    { value: "<2s", label: "latence pipeline" },
+    { value: "0", label: "DevOps requis" },
+  ],
+  features: [
+    { icon: "🔌", title: "40+ connecteurs natifs", desc: "PostgreSQL, Snowflake, BigQuery, S3, Salesforce, HubSpot, Stripe — branchez vos sources en quelques clics, sans ecrire une ligne de code." },
+    { icon: "🛡️", title: "Monitoring qualite", desc: "Regles de validation declaratives appliquees a chaque run. Alertes Slack et PagerDuty declenchees automatiquement si un dataset derive ou echoue." },
+    { icon: "⚙️", title: "Orchestration automatique", desc: "DAGs auto-generes depuis votre configuration. Scheduling, retry automatique et backfill historique inclus — Airflow sans la complexite." },
+  ],
+  steps: [
+    { num: "01", title: "Connectez vos sources", desc: "Selectionnez vos sources parmi les 40+ connecteurs disponibles. La configuration se fait en interface visuelle, aucun code requis." },
+    { num: "02", title: "Definissez vos regles", desc: "Configurez vos transformations SQL ou Python et vos regles de qualite. DataStream genere et orchestre les DAGs automatiquement." },
+    { num: "03", title: "Vos donnees arrivent propres", desc: "Chaque run valide, transforme et livre vos donnees vers votre entrepot ou data lake. Alertes en cas d'anomalie, zero intervention manuelle." },
+  ],
+  testimonials: [
+    { quote: "On a remplace une equipe data de 3 personnes par DataStream. Le pipeline tourne 24h/24, les donnees sont propres et les alertes arrivent avant qu'on s'en apercoive.", author: "Nicolas F.", role: "CTO, Scale-up SaaS" },
+    { quote: "Setup en moins d'une journee. Nos 12 sources sont connectees, les regles de qualite actives et les rapports automatiques. On n'y touche plus.", author: "Amelie D.", role: "Head of Data, Retailer en ligne" },
+  ],
+  ctaTitle: "Votre pipeline en production aujourd'hui",
+  ctaDesc: "Configuration en moins de 30 minutes. Aucun DevOps requis. Premiers resultats des le premier run.",
+  ctaPrimary: "Reserver un creneau",
+  footerTagline: "Pipeline de donnees IA automatise pour equipes ambitieuses",
+};
+
+export default function Page() {
+  const bg = "#04080F";
+  const bg2 = "#070D1B";
+  const card = "rgba(255,255,255,0.04)";
+  const border = "rgba(255,255,255,0.09)";
+  const gold = "#D4AF37";
+  const goldDim = "rgba(212,175,55,0.1)";
+  const goldBorder = "rgba(212,175,55,0.28)";
+  const txt1 = "#F0EDE6";
+  const txt2 = "#8B9DB5";
+  const txt3 = "#3C5068";
+  const { accent, accentDim, accentBorder, accentGlow } = P;
 
   return (
-    <main style={{ color: "#042f2e", fontFamily: "var(--font-body)" }}>
-      {/* Nav */}
-      <nav
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: "1.1rem 2.5rem",
-          borderBottom: "1px solid #99f6e4",
-          backgroundColor: "#f0fdfa",
-          position: "sticky",
-          top: 0,
-          zIndex: 50,
-        }}
-      >
-        <span
-          style={{
-            fontFamily: "var(--font-display)",
-            fontSize: "1.1rem",
-            fontWeight: 700,
-            color: "#134e4a",
-            letterSpacing: "0.1em",
-            textTransform: "uppercase",
-          }}
-        >
-          DataStream
+    <div style={{ minHeight: "100vh", background: bg, color: txt1 }}>
+      <style>{`
+        *, *::before, *::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+        @keyframes pulseDot { 0%,100%{ opacity:1; transform:scale(1); } 50%{ opacity:.4; transform:scale(1.6); } }
+        .wk-card { transition: background .3s, border-color .3s, transform .35s cubic-bezier(.34,1.2,.64,1); }
+        .wk-card:hover { background: rgba(255,255,255,0.07) !important; border-color: ${accentBorder} !important; transform: translateY(-6px) !important; }
+        .wk-btn { transition: opacity .2s, transform .2s, box-shadow .2s; }
+        .wk-btn:hover { opacity:.9; transform:translateY(-2px); box-shadow:0 12px 32px rgba(212,175,55,.18); }
+        .wk-wa { transition: opacity .2s, transform .2s; }
+        .wk-wa:hover { opacity:.9; transform:translateY(-2px); }
+        .wk-nav-link { color: #8B9DB5; text-decoration:none; font-size:14px; font-weight:500; transition:color .2s; }
+        .wk-nav-link:hover { color: #F0EDE6; }
+        @media(max-width:640px){ .wk-hide-sm{ display:none!important; } .wk-hero-title{ font-size:2.4rem!important; } }
+      `}</style>
+
+      {/* NAVBAR */}
+      <nav style={{ position:"sticky", top:0, zIndex:100, background:"rgba(4,8,15,0.82)", backdropFilter:"blur(20px)", borderBottom:`1px solid ${border}`, padding:"0 40px", height:60, display:"flex", alignItems:"center", justifyContent:"space-between" }}>
+        <span style={{ fontSize:18, fontWeight:800, letterSpacing:"-0.5px", color:txt1 }}>
+          {P.name}<span style={{ color:gold }}>.</span>
         </span>
-        <button data-cal-link="wikolabs-team/30min" data-cal-namespace="wk30min" data-cal-config='{"layout":"month_view"}' type="button"
-            style={{
-            border: "1.5px solid #134e4a",
-            color: "#134e4a",
-            padding: "0.5rem 1.25rem",
-            textDecoration: "none",
-            fontSize: "0.8rem",
-            fontWeight: 700,
-            letterSpacing: "0.08em",
-            textTransform: "uppercase",
-          }}>
-          $ ./request-demo
-        </button>
+        <div style={{ display:"flex", gap:28, alignItems:"center" }}>
+          <div className="wk-hide-sm" style={{ display:"flex", gap:24 }}>
+            {P.navLinks.map(l => <a key={l.label} href={l.href} className="wk-nav-link">{l.label}</a>)}
+          </div>
+          <button data-cal-link="wikolabs-team/30min" data-cal-namespace="wk30min" data-cal-config='{"layout":"month_view"}' className="wk-btn"
+            style={{ background:gold, color:"#04080F", border:"none", borderRadius:8, padding:"8px 18px", fontWeight:700, fontSize:13.5, cursor:"pointer", fontFamily:"inherit" }}>
+            Reserver &rarr;
+          </button>
+        </div>
       </nav>
 
-      {/* Hero */}
-      <section
-        style={{
-          maxWidth: "780px",
-          margin: "0 auto",
-          padding: "5rem 2rem 3rem",
-        }}
-      >
-        <div
-          style={{
-            fontFamily: "var(--font-body)",
-            fontSize: "0.8rem",
-            color: "#0f766e",
-            marginBottom: "1.5rem",
-            letterSpacing: "0.05em",
-          }}
-        >
-          <span style={{ color: "#14b8a6" }}>▶</span> v3.1.0 — pipeline stable — uptime 99.97%
+      {/* HERO */}
+      <section style={{ padding:"100px 40px 80px", maxWidth:1000, margin:"0 auto", textAlign:"center", position:"relative" }}>
+        <div style={{ position:"absolute", top:-60, left:"50%", transform:"translateX(-50%)", width:700, height:600, background:`radial-gradient(ellipse at 50% 30%, ${accentGlow} 0%, transparent 60%)`, pointerEvents:"none" }} />
+        <div style={{ display:"inline-flex", alignItems:"center", gap:8, marginBottom:24, background:accentDim, border:`1px solid ${accentBorder}`, borderRadius:100, padding:"6px 18px", animation:"fadeUp .5s ease both" }}>
+          <span style={{ width:7, height:7, borderRadius:"50%", background:accent, display:"inline-block", animation:"pulseDot 2s ease-in-out infinite" }} />
+          <span style={{ color:accent, fontSize:11.5, fontWeight:700, letterSpacing:"2px", textTransform:"uppercase" }}>{P.tagLabel}</span>
         </div>
-        <h1
-          style={{
-            fontFamily: "var(--font-display)",
-            fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
-            lineHeight: 1.2,
-            fontWeight: 700,
-            marginBottom: "1.25rem",
-            color: "#042f2e",
-            textTransform: "uppercase",
-            letterSpacing: "0.05em",
-          }}
-        >
-          Vos données.
-          <br />Propres. En temps réel.
-          <br />Sans équipe data.
+        <h1 className="wk-hero-title" style={{ fontSize:"clamp(2.6rem,6vw,5rem)", fontWeight:700, lineHeight:1.08, letterSpacing:"-0.03em", marginBottom:28, fontFamily:"'Instrument Serif',Georgia,serif", animation:"fadeUp .5s .08s ease both" }}>
+          {P.taglines.map((line, i) => (
+            <span key={i} style={{ display:"block", color:i===P.taglineAccentIdx?accent:txt1, fontStyle:i===P.taglineAccentIdx?"italic":"normal" }}>{line}</span>
+          ))}
         </h1>
-        <p
-          style={{
-            fontFamily: "var(--font-body)",
-            fontSize: "0.95rem",
-            color: "#134e4a",
-            lineHeight: 1.8,
-            marginBottom: "2.5rem",
-            maxWidth: "540px",
-          }}
-        >
-          // DataStream orchestre votre pipeline de bout en bout —<br />
-          // ingestion → transformation → validation → livraison<br />
-          // Sans coder. Sans recruter. Sans payer une équipe data.
-        </p>
-        <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-          <button data-cal-link="wikolabs-team/30min" data-cal-namespace="wk30min" data-cal-config='{"layout":"month_view"}' type="button"
-            style={{
-              backgroundColor: "#134e4a",
-              color: "#f0fdfa",
-              padding: "0.85rem 2rem",
-              textDecoration: "none",
-              fontSize: "0.85rem",
-              fontWeight: 700,
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-            }}>
-            📅 Réserver un créneau →
+        <p style={{ fontSize:"1.1rem", color:txt2, lineHeight:1.72, maxWidth:580, margin:"0 auto 48px", animation:"fadeUp .5s .16s ease both" }}>{P.desc}</p>
+        <div style={{ display:"flex", flexWrap:"wrap", justifyContent:"center", gap:14, marginBottom:44, animation:"fadeUp .5s .24s ease both" }}>
+          {P.metrics.map(m => (
+            <div key={m.label} style={{ background:card, border:`1px solid ${border}`, borderRadius:18, padding:"14px 22px", textAlign:"center", minWidth:118 }}>
+              <div style={{ fontSize:"1.7rem", fontWeight:800, color:txt1, letterSpacing:"-1.5px", lineHeight:1 }}>{m.value}</div>
+              <div style={{ fontSize:"0.62rem", color:txt3, textTransform:"uppercase", letterSpacing:"1.5px", marginTop:5 }}>{m.label}</div>
+            </div>
+          ))}
+        </div>
+        <div style={{ display:"flex", flexWrap:"wrap", gap:12, justifyContent:"center", animation:"fadeUp .5s .32s ease both" }}>
+          <button data-cal-link="wikolabs-team/30min" data-cal-namespace="wk30min" data-cal-config='{"layout":"month_view"}' className="wk-btn"
+            style={{ background:gold, color:"#04080F", border:"none", borderRadius:10, padding:"14px 28px", fontWeight:700, fontSize:15, cursor:"pointer", display:"flex", alignItems:"center", gap:8, fontFamily:"inherit" }}>
+            &#128197; {P.ctaPrimary}
           </button>
-          <a
-            href="https://wa.me/261386626100?text=Bonjour%2C%20je%20souhaite%20discuter%20de%20DataStream%20avec%20Wikolabs."
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              backgroundColor: "#25d366",
-              color: "#fff",
-              padding: "0.85rem 2rem",
-              textDecoration: "none",
-              fontSize: "0.85rem",
-              fontWeight: 700,
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-            }}
-          >
-            💬 WhatsApp →
+          <a href={`https://wa.me/261386626100?text=Bonjour%2C%20je%20souhaite%20discuter%20de%20${encodeURIComponent(P.waText)}%20avec%20Wikolabs.`}
+            target="_blank" rel="noopener noreferrer" className="wk-wa"
+            style={{ background:"#25d366", color:"#fff", borderRadius:10, padding:"14px 28px", fontWeight:700, fontSize:15, textDecoration:"none", display:"flex", alignItems:"center", gap:8 }}>
+            &#128172; WhatsApp
           </a>
         </div>
       </section>
 
-      {/* Pipeline diagram */}
-      <section style={{ backgroundColor: "#042f2e", padding: "4rem 2rem" }}>
-        <div style={{ maxWidth: "960px", margin: "0 auto" }}>
-          <p
-            style={{
-              fontFamily: "var(--font-body)",
-              fontSize: "0.75rem",
-              color: "#5eead4",
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              marginBottom: "2rem",
-            }}
-          >
-            // architecture pipeline — flux actif
-          </p>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              flexWrap: "wrap",
-              gap: "0",
-            }}
-          >
-            {steps.map((step, i) => (
-              <div key={i} style={{ display: "flex", alignItems: "center" }}>
-                <div
-                  style={{
-                    backgroundColor: step.color,
-                    padding: "1rem 1.25rem",
-                    minWidth: "100px",
-                    textAlign: "center",
-                  }}
-                >
-                  <div
-                    style={{
-                      fontFamily: "var(--font-display)",
-                      fontSize: "0.65rem",
-                      fontWeight: 700,
-                      color: "#f0fdfa",
-                      letterSpacing: "0.1em",
-                      marginBottom: "0.4rem",
-                    }}
-                  >
-                    {step.label}
-                  </div>
-                  <div style={{ fontFamily: "var(--font-body)", fontSize: "0.7rem", color: "#ccfbf1" }}>
-                    {step.desc}
-                  </div>
+      {/* FEATURES */}
+      <section id="features" style={{ padding:"80px 40px", maxWidth:1100, margin:"0 auto" }}>
+        <div style={{ textAlign:"center", marginBottom:52 }}>
+          <p style={{ fontSize:"0.68rem", color:gold, letterSpacing:"3px", textTransform:"uppercase", fontWeight:700, marginBottom:14 }}>Fonctionnalites</p>
+          <h2 style={{ fontSize:"clamp(1.8rem,3.5vw,2.8rem)", fontWeight:700, color:txt1, letterSpacing:"-0.02em", fontFamily:"'Instrument Serif',Georgia,serif", lineHeight:1.15 }}>
+            Tout automatise, <em style={{ fontStyle:"italic", color:gold }}>rien a gerer</em>
+          </h2>
+        </div>
+        <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(300px,1fr))", gap:20 }}>
+          {P.features.map((f, i) => (
+            <div key={f.title} className="wk-card" style={{ background:card, border:`1px solid ${border}`, borderRadius:20, padding:"28px 28px 24px", position:"relative", overflow:"hidden" }}>
+              <div style={{ position:"absolute", top:0, left:0, right:0, height:2, background:`linear-gradient(90deg,transparent,${i===0?gold:accent},transparent)`, opacity:.6 }} />
+              <div style={{ fontSize:"2rem", marginBottom:16 }}>{f.icon}</div>
+              <h3 style={{ fontSize:"1.05rem", fontWeight:700, color:txt1, marginBottom:10 }}>{f.title}</h3>
+              <p style={{ fontSize:"0.88rem", color:txt2, lineHeight:1.7, margin:0 }}>{f.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* HOW IT WORKS */}
+      <section id="process" style={{ padding:"80px 40px", background:bg2 }}>
+        <div style={{ maxWidth:860, margin:"0 auto" }}>
+          <div style={{ textAlign:"center", marginBottom:48 }}>
+            <p style={{ fontSize:"0.68rem", color:gold, letterSpacing:"3px", textTransform:"uppercase", fontWeight:700, marginBottom:14 }}>Comment ca marche</p>
+            <h2 style={{ fontSize:"clamp(1.8rem,3.5vw,2.8rem)", fontWeight:700, color:txt1, letterSpacing:"-0.02em", fontFamily:"'Instrument Serif',Georgia,serif" }}>
+              En production en <em style={{ fontStyle:"italic", color:accent }}>30 minutes</em>
+            </h2>
+          </div>
+          <div style={{ display:"flex", flexDirection:"column", gap:14 }}>
+            {P.steps.map((s, i) => (
+              <div key={s.num} style={{ display:"flex", alignItems:"flex-start", gap:22, background:card, border:`1px solid ${border}`, borderRadius:18, padding:"22px 26px" }}>
+                <div style={{ flexShrink:0, width:46, height:46, background:i===0?goldDim:accentDim, border:`1px solid ${i===0?goldBorder:accentBorder}`, borderRadius:14, display:"flex", alignItems:"center", justifyContent:"center", color:i===0?gold:accent, fontWeight:800, fontSize:15 }}>
+                  {s.num}
                 </div>
-                {i < steps.length - 1 && (
-                  <div
-                    style={{
-                      width: "32px",
-                      height: "2px",
-                      backgroundColor: "#5eead4",
-                      position: "relative",
-                      flexShrink: 0,
-                    }}
-                  >
-                    <div
-                      style={{
-                        position: "absolute",
-                        right: "-1px",
-                        top: "50%",
-                        transform: "translateY(-50%)",
-                        width: 0,
-                        height: 0,
-                        borderTop: "5px solid transparent",
-                        borderBottom: "5px solid transparent",
-                        borderLeft: "8px solid #5eead4",
-                      }}
-                    />
-                  </div>
-                )}
+                <div>
+                  <h3 style={{ fontSize:"1rem", fontWeight:700, color:txt1, marginBottom:6, lineHeight:1.3 }}>{s.title}</h3>
+                  <p style={{ fontSize:"0.87rem", color:txt2, lineHeight:1.7, margin:0 }}>{s.desc}</p>
+                </div>
               </div>
             ))}
-          </div>
-          <div
-            style={{
-              marginTop: "2rem",
-              padding: "1rem 1.5rem",
-              backgroundColor: "#0d1f1f",
-              borderLeft: "3px solid #14b8a6",
-              fontFamily: "var(--font-body)",
-              fontSize: "0.8rem",
-              color: "#5eead4",
-              lineHeight: 1.8,
-            }}
-          >
-            <span style={{ color: "#14b8a6" }}>✓</span> 3 sources connectées &nbsp;|&nbsp;
-            <span style={{ color: "#14b8a6" }}>✓</span> 12 règles de transformation actives &nbsp;|&nbsp;
-            <span style={{ color: "#14b8a6" }}>✓</span> 0 erreurs de qualité &nbsp;|&nbsp;
-            <span style={{ color: "#2dd4bf" }}>⟳</span> Dernier run: 2s ago
           </div>
         </div>
       </section>
 
-      {/* Features */}
-      <section style={{ padding: "4rem 2rem" }}>
-        <div style={{ maxWidth: "900px", margin: "0 auto" }}>
-          <h2
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "1.1rem",
-              fontWeight: 700,
-              textTransform: "uppercase",
-              letterSpacing: "0.1em",
-              color: "#042f2e",
-              marginBottom: "2.5rem",
-            }}
-          >
-            // features[]
-          </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2rem" }}>
-            {[
-              { key: "connectors", title: "40+ connecteurs", desc: "PostgreSQL, Snowflake, BigQuery, S3, Salesforce, HubSpot, Stripe — out of the box." },
-              { key: "quality", title: "Monitoring qualité", desc: "Règles de validation déclaratives. Alertes Slack/PagerDuty si un dataset dérive." },
-              { key: "orchestration", title: "Orchestration Airflow", desc: "DAGs auto-générés depuis votre config YAML. Scheduling, retry, backfill inclus." },
-            ].map((f) => (
-              <div
-                key={f.key}
-                style={{
-                  borderTop: "2px solid #134e4a",
-                  paddingTop: "1.25rem",
-                }}
-              >
-                <div
-                  style={{
-                    fontFamily: "var(--font-body)",
-                    fontSize: "0.7rem",
-                    color: "#0f766e",
-                    marginBottom: "0.5rem",
-                    letterSpacing: "0.05em",
-                  }}
-                >
-                  const {f.key} =
+      {/* TESTIMONIALS */}
+      <section style={{ padding:"80px 40px", maxWidth:900, margin:"0 auto" }}>
+        <div style={{ textAlign:"center", marginBottom:44 }}>
+          <p style={{ fontSize:"0.68rem", color:gold, letterSpacing:"3px", textTransform:"uppercase", fontWeight:700, marginBottom:14 }}>Temoignages</p>
+          <h2 style={{ fontSize:"clamp(1.6rem,3vw,2.4rem)", fontWeight:700, color:txt1, fontFamily:"'Instrument Serif',Georgia,serif" }}>Ce qu&apos;en disent nos clients</h2>
+        </div>
+        <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(340px,1fr))", gap:20 }}>
+          {P.testimonials.map((t, i) => (
+            <div key={i} style={{ background:card, border:`1px solid ${border}`, borderLeft:`3px solid ${i===0?gold:accent}`, borderRadius:20, padding:"26px 26px 22px" }}>
+              <p style={{ fontSize:"0.92rem", color:txt2, lineHeight:1.75, fontStyle:"italic", marginBottom:20 }}>&ldquo;{t.quote}&rdquo;</p>
+              <div style={{ display:"flex", alignItems:"center", gap:12 }}>
+                <div style={{ width:38, height:38, borderRadius:"50%", background:i===0?goldDim:accentDim, border:`1px solid ${i===0?goldBorder:accentBorder}`, display:"flex", alignItems:"center", justifyContent:"center", fontSize:16 }}>&#128100;</div>
+                <div>
+                  <div style={{ fontSize:"0.9rem", fontWeight:700, color:txt1 }}>{t.author}</div>
+                  <div style={{ fontSize:"0.72rem", color:txt3 }}>{t.role}</div>
                 </div>
-                <h3
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontSize: "0.85rem",
-                    fontWeight: 700,
-                    textTransform: "uppercase",
-                    letterSpacing: "0.05em",
-                    marginBottom: "0.6rem",
-                    color: "#042f2e",
-                  }}
-                >
-                  {f.title}
-                </h3>
-                <p style={{ fontSize: "0.8rem", color: "#134e4a", lineHeight: 1.7 }}>{f.desc}</p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* CTA */}
-      <section
-        style={{
-          backgroundColor: "#134e4a",
-          textAlign: "center",
-          padding: "4rem 2rem",
-          color: "#f0fdfa",
-        }}
-      >
-        <h2
-          style={{
-            fontFamily: "var(--font-display)",
-            fontSize: "1.4rem",
-            fontWeight: 700,
-            textTransform: "uppercase",
-            letterSpacing: "0.08em",
-            marginBottom: "1rem",
-          }}
-        >
-          Votre pipeline en production aujourd'hui
-        </h2>
-        <p style={{ fontSize: "0.85rem", color: "#99f6e4", marginBottom: "2rem", fontFamily: "var(--font-body)" }}>
-          // setup &lt; 30min. no DevOps required. free tier available.
-        </p>
-        <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
-          <button data-cal-link="wikolabs-team/30min" data-cal-namespace="wk30min" data-cal-config='{"layout":"month_view"}' type="button"
-            style={{
-              backgroundColor: "#f0fdfa",
-              color: "#134e4a",
-              padding: "0.85rem 2.5rem",
-              textDecoration: "none",
-              fontWeight: 700,
-              fontSize: "0.85rem",
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              fontFamily: "var(--font-body)",
-            }}>
-            📅 Réserver un créneau →
-          </button>
-          <a
-            href="https://wa.me/261386626100?text=Bonjour%2C%20je%20souhaite%20discuter%20de%20DataStream%20avec%20Wikolabs."
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              backgroundColor: "#25d366",
-              color: "#fff",
-              padding: "0.85rem 2.5rem",
-              textDecoration: "none",
-              fontWeight: 700,
-              fontSize: "0.85rem",
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              fontFamily: "var(--font-body)",
-            }}
-          >
-            💬 WhatsApp →
-          </a>
+      <section id="cta" style={{ padding:"0 40px 100px", maxWidth:860, margin:"0 auto" }}>
+        <div style={{ background:card, border:`1px solid ${goldBorder}`, borderRadius:24, padding:"64px 48px", textAlign:"center", backgroundImage:`radial-gradient(ellipse at 50% 0%, ${goldDim} 0%, transparent 65%)` }}>
+          <p style={{ fontSize:"0.68rem", color:gold, letterSpacing:"3px", textTransform:"uppercase", fontWeight:700, marginBottom:16 }}>Demarrer</p>
+          <h2 style={{ fontSize:"clamp(1.8rem,3.5vw,2.8rem)", fontWeight:700, color:txt1, marginBottom:14, letterSpacing:"-0.02em", fontFamily:"'Instrument Serif',Georgia,serif" }}>{P.ctaTitle}</h2>
+          <p style={{ color:txt2, fontSize:"1rem", marginBottom:36, lineHeight:1.7 }}>{P.ctaDesc}</p>
+          <div style={{ display:"flex", flexWrap:"wrap", gap:12, justifyContent:"center" }}>
+            <button data-cal-link="wikolabs-team/30min" data-cal-namespace="wk30min" data-cal-config='{"layout":"month_view"}' className="wk-btn"
+              style={{ background:gold, color:"#04080F", border:"none", borderRadius:10, padding:"14px 28px", fontWeight:700, fontSize:15, cursor:"pointer", display:"flex", alignItems:"center", gap:8, fontFamily:"inherit" }}>
+              &#128197; {P.ctaPrimary}
+            </button>
+            <a href={`https://wa.me/261386626100?text=Bonjour%2C%20je%20souhaite%20discuter%20de%20${encodeURIComponent(P.waText)}%20avec%20Wikolabs.`}
+              target="_blank" rel="noopener noreferrer" className="wk-wa"
+              style={{ background:"#25d366", color:"#fff", borderRadius:10, padding:"14px 28px", fontWeight:700, fontSize:15, textDecoration:"none", display:"flex", alignItems:"center", gap:8 }}>
+              &#128172; WhatsApp
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer
-        style={{
-          borderTop: "1px solid #99f6e4",
-          textAlign: "center",
-          padding: "1.5rem",
-          fontSize: "0.75rem",
-          color: "#0f766e",
-          fontFamily: "var(--font-body)",
-        }}
-      >
-        © 2025 DataStream — Un produit Wikolabs
-        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "1rem", marginTop: "0.5rem", fontSize: "0.8rem" }}>
-          <a href="mailto:team@wikolabs.com" style={{ textDecoration: "none", color: "inherit" }}>team@wikolabs.com</a>
-          <span>·</span>
-          <a href="tel:+261386626100" style={{ textDecoration: "none", color: "inherit" }}>+261 38 66 261 00</a>
-          <span>·</span>
-          <button data-cal-link="wikolabs-team/30min" data-cal-namespace="wk30min" data-cal-config='{"layout":"month_view"}' type="button" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit" }}>Prendre RDV</button>
+      {/* FOOTER */}
+      <footer style={{ borderTop:`1px solid ${border}`, padding:"32px 40px" }}>
+        <div style={{ maxWidth:1200, margin:"0 auto", display:"flex", flexWrap:"wrap", justifyContent:"space-between", alignItems:"center", gap:16 }}>
+          <div>
+            <span style={{ fontWeight:800, fontSize:16, color:txt1 }}>{P.name}</span><span style={{ color:gold }}>.</span>
+            <span style={{ display:"block", fontSize:12, color:txt3, marginTop:3 }}>{P.footerTagline}</span>
+          </div>
+          <p style={{ fontSize:13, color:txt3 }}>&#169; 2026 {P.name} &mdash; Un produit <a href="https://wikolabs.com" style={{ color:txt2, textDecoration:"none" }}>Wikolabs</a></p>
+          <div style={{ display:"flex", flexWrap:"wrap", gap:16, fontSize:13, alignItems:"center" }}>
+            <a href="mailto:team@wikolabs.com" style={{ color:txt3, textDecoration:"none" }}>team@wikolabs.com</a>
+            <span style={{ color:txt3 }}>&#183;</span>
+            <button data-cal-link="wikolabs-team/30min" data-cal-namespace="wk30min" data-cal-config='{"layout":"month_view"}' style={{ background:"none", border:"none", color:txt3, fontSize:13, cursor:"pointer", fontFamily:"inherit", padding:0 }}>Prendre RDV</button>
+          </div>
         </div>
       </footer>
-    </main>
+    </div>
   );
 }
